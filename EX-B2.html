@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización en el Navegador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        p, ul {
+            margin-bottom: 1rem;
+        }
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .section h2 {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Automatización con JavaScript</h1>
+    <p class="highlight">En este ejemplo, aprenderás cómo automatizar un formulario en el navegador utilizando JavaScript. Esto incluye autocompletar campos y simular el envío del formulario.</p>
+
+    <!-- Formulario -->
+    <form id="autoForm" action="https://httpbin.org/post" method="post" target="_blank">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- ¿Qué hace? -->
+    <div class="section">
+        <h2>¿Qué hace este script?</h2>
+        <p>
+            <strong>1. Autocompleta los campos del formulario:</strong><br>
+            - Rellena automáticamente el campo "Nombre" con "Juan Pérez".<br>
+            - Rellena el campo "Correo electrónico" con "juan.perez@example.com".<br>
+            - Rellena el campo "Mensaje" con un texto generado automáticamente.
+        </p>
+        <p>
+            <strong>2. Simula el envío del formulario:</strong><br>
+            Utiliza <code>form.submit()</code> para enviar el formulario automáticamente.
+        </p>
+        <p>
+            <strong>3. Retraso de 2 segundos:</strong><br>
+            Permite observar cómo se completan los campos antes de enviar el formulario.
+        </p>
+    </div>
+
+    <!-- ¿Por qué es útil? -->
+    <div class="section">
+        <h2>¿Por qué es útil?</h2>
+        <ul>
+            <li>Permite completar tareas repetitivas en formularios web.</li>
+            <li>Útil para realizar pruebas automáticas en aplicaciones web.</li>
+            <li>Facilita la entrada de datos masiva de manera automatizada.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Automatización con JavaScript. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    // Automatización del formulario
+    function autoFillAndSubmit() {
+        // Seleccionamos los elementos del formulario
+        const nameField = document.getElementById('name');
+        const emailField = document.getElementById('email');
+        const messageField = document.getElementById('message');
+        const form = document.getElementById('autoForm');
+
+        // Rellenamos los campos automáticamente
+        nameField.value = 'Juan Pérez';
+        emailField.value = 'juan.perez@example.com';
+        messageField.value = 'Este es un mensaje generado automáticamente.';
+
+        // Simulamos el envío del formulario
+        setTimeout(() => {
+            alert('Formulario completado automáticamente. Ahora se enviará.');
+            form.submit();
+        }, 2000); // Retraso de 2 segundos para observar los cambios
+    }
+
+    // Llamar a la función de automatización al cargar la página
+    window.onload = autoFillAndSubmit;
+</script>
+</body>
+</html>
