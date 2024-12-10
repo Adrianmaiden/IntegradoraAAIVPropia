@@ -1,9 +1,115 @@
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de inicio elegante con Bootstrap y JavaScript">
+  <title>Práctica - Página de Inicio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .hero {
+      background-color: black;
+      color: yellow;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 15rem;
+      font-weight: bold;
+      line-height: 1;
+      margin: 0;
+      opacity: 0.1; /* Para un efecto más sutil */
+    }
+    .hero .content {
+      position: absolute;
+      color: white;
+    }
+    .hero .content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .features {
+      padding: 3rem 0;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<!-- Hero Section -->
+<div class="hero">
+  <h1>JS</h1>
+  <div class="content">
+    <h2>Bienvenido a Nuestra Página</h2>
+    <p class="lead">Explora las funcionalidades que ofrece JavaScript</p>
+    <a href="#features" class="btn btn-primary btn-lg">Descubrir Más</a>
+  </div>
+</div>
+
+<!-- Blogs Section -->
+<section id="features" class="features container">
+  <h2 class="text-center mb-5">Blogs sobre Automatización con JavaScript</h2>
+  <div class="row g-4">
+    <!-- Blog 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Automatización con JavaScript">
+        <div class="card-body">
+          <h5 class="card-title">¿Qué es la automatización con JavaScript y por qué es útil?</h5>
+          <p class="card-text">Explora cómo JavaScript puede automatizar tareas y ahorrar tiempo en procesos repetitivos como manipulación del DOM y formularios.</p>
+          <a href="blog1.html" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <!-- Blog 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/SvFocn0wNMx0iv2rYz" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+        <div class="card-body">
+          <h5 class="card-title">Automatizando tareas en el navegador con JavaScript</h5>
+          <p class="card-text">Aprende cómo usar JavaScript para realizar tareas repetitivas en páginas web, interactuar con APIs o autocompletar formularios.</p>
+          <a href="blog2.html" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <!-- Blog 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Herramientas para automatización">
+        <div class="card-body">
+          <h5 class="card-title">Herramientas y bibliotecas para la automatización con JavaScript</h5>
+          <p class="card-text">Descubre bibliotecas como Puppeteer y Node.js, y cómo amplían las capacidades de automatización de JavaScript.</p>
+          <a href="blog3.html" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Práctica Web. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
